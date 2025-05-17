@@ -19,6 +19,7 @@
     "@tinymce/tinymce-react": "^6.1.0",
     "axios": "^1.9.0",
     "bcryptjs": "^3.0.2",
+    "portfolio": "file:..",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-dropzone": "^14.3.8",

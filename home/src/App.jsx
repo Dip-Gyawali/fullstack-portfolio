@@ -1,7 +1,7 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Sidebar from './components/sidebar'
-import Home from './components/home'
+import Home from './components/Home'
 import PortfolioDetail from './components/portfolioDetail'
 import ServiceDetail from './components/serviceDetail'
 const router = createBrowserRouter([

@@ -15,7 +15,8 @@ const skill = require('../backend/routes/admin/skill')
 const testimonial = require('../backend/routes/admin/testimonial')
 const user = require('../backend/routes/admin/user')
 const home = require('../backend/routes/front/home')
-
+const path = require('path');
+const __dirname = path.resolve();
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
@@ -32,9 +33,15 @@ app.use('/api/admin/testimonial',testimonial)
 app.use('/api/admin/user',user)
 app.use('/api/front/home',home)
 
+app.use(express.static(path.join(__dirname,'../frontend/dist')));
+app.get('*',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'../frontend/dist','index.html'));
+})
+
 app.use((req,res)=>{
     res.status(404).json({message:"Invalid Url"});
 })
+
 
 app.listen(process.env.PORT,()=>{
     connectDB();
