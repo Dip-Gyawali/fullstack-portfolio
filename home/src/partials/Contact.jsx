@@ -233,7 +233,6 @@ export default function Contact() {
                     />
                   </div>
                 
-
                   <div className="col-md-12 text-center">
                     {loading && <div className="loading">Loading...</div>}
                     {status.message && (
