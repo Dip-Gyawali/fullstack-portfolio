@@ -12,30 +12,6 @@ import Testimonial from "../partials/Testimonial";
 import Contact from "../partials/Contact";
 
 export default function Home() {
-  const [basicInfo, setBasicInfo] = useState(null);
-  const [role, setRole] = useState(null);
-  const [services, setServices] = useState(null);
-  const [skills, setSkills] = useState(null);
-  const [testimonials, setTestimonials] = useState(null);
-  const [portfolio, setPortfolio] = useState(null);
-
-  const getData = async()=>{
-    try {
-      const response = await axios.get(`${import.meta.env.VITE_API}/front/home`);
-      console.log(response.data);
-      setBasicInfo(response.data.basicInfo);
-      setRole(response.data.role);
-      setServices(response.data.service);
-      setSkills(response.data.skill);
-      setTestimonials(response.data.testimonial);
-      setPortfolio(response.data.portfolio);
-      console.log(response.data.skill);
-      
-    } catch (error) {
-      console.error("Error fetching home data:", error);
-    }
-  };
-
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -43,20 +19,19 @@ export default function Home() {
       once: true,
       mirror: false,
     });
-    getData();
   }, []);
 
   return (
     <>
       <main className="main">
-        <Hero basicInfo={basicInfo} role={role} />
-        <About basicInfo={basicInfo} role={role} />
-        <Skills skills={skills} />
-        <Resume basicInfo={basicInfo} />
-        <Portfolio portfolio={portfolio}/>
-        <Service services={services} />
-        <Testimonial testimonials={testimonials} />
-        <Contact basicInfo={basicInfo} />
+        <Hero />
+        <About />
+        <Skills  />
+        <Resume />
+        <Portfolio />
+        <Service />
+        <Testimonial />
+        <Contact />
       </main>
     </>
   );

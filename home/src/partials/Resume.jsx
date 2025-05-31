@@ -1,27 +1,47 @@
 import React from "react";
 import parse from "html-react-parser";
 
-export default function Resume({ basicInfo }) {
-  const handleDownloadCV = async () => {
-    const filename = basicInfo?.[0]?.cv;
-    if (!filename) return;
+export default function Resume() {
+  let education =
+    '<h4>Bachelor in Information Technology</h4> <h5>2021 - present (Expected 2025)</h5> <p><em>KIST College &amp; SS , Kathmandu , Nepal</em></p> <p><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">-Relevant Courses</span><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">: Data Structures, AI, Applied Statistics, Advanced Web Development</span></p>';
+  let experience = `
+  <p><strong><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">FullStack Developer</span></strong></p>
+  <p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Dec 2024 - Present</span></p>
+  <ul>
+    <li><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Developed and deployed 7+ full-stack applications for clients, reducing page load time by 40% via backend optimization and caching.</span></li>
+    <li><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Managed deployment via cPanel &amp; FileZilla, reducing production errors by 30%.</span></li>
+    <li><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Played a key role in enhancing project functionality by implementing new features and resolving issues to improve overall system reliability and user experience.</span></li>
+    <li><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Enhanced camera test features, increasing UI interaction time by 25%.</span></li>
+    <li><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Actively contributed to troubleshooting, performance optimization, and ensuring smooth functionality for end-users.</span></li>
+  </ul>
+  <p><strong><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">FrontEnd Intern</span></strong></p>
+  <p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Sep 2024 - Dec 2024</span></p>
+  <ul>
+    <li><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Enhanced the frontend of tech news site, focusing on blind camera test features, polls functionality, News Section, Price List and many more.</span></li>
+    <li><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Designed and implemented many features, including both admin and frontend user sections, with dynamic UI and interactive functionalities.</span></li>
+    <li><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Implemented React.js core hooks along with shadcn for UI</span></li>
+  </ul>
+  `;
+  let cv = "/cv/Dip Kumar Gyawali CV.pdf";
 
-    const baseUrl = import.meta.env.VITE_IMAGE_URL;
-    const url = `${baseUrl.replace(/\/+$/, '')}/uploads/${filename}`;
-    
+  const handleDownloadCV = async () => {
+    if (!cv) return;
+
     try {
-      const response = await fetch(url);
+      const response = await fetch(cv);
+      if (!response.ok) throw new Error("File not found");
+
       const blob = await response.blob();
       const downloadUrl = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = downloadUrl;
-      link.setAttribute('download', 'Dip Kumar Gyawali CV.pdf');
+      link.setAttribute("download", "Dip_Kumar_Gyawali_CV.pdf");
       document.body.appendChild(link);
       link.click();
       link.remove();
       window.URL.revokeObjectURL(downloadUrl);
     } catch (error) {
-      console.error('Error downloading file:', error);
+      console.error("Error downloading file:", error);
     }
   };
 
@@ -46,25 +66,28 @@ export default function Resume({ basicInfo }) {
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay={100}>
               <h3 className="resume-title">Sumary</h3>
               <div className="resume-item pb-0">
-                <h4>{basicInfo?.[0]?.name}</h4>
+                <h4>Dip Kumar Gyawali</h4>
                 <p>
                   <em>
-                    {basicInfo?.[0]?.summary && parse(basicInfo[0].summary)}
+                    Results-driven Full-Stack Developer with a proven track
+                    record of building and deploying scalable web applications.
+                    Skilled in both frontend and backend development, database
+                    design, and API integration. Seeking a challenging role to
+                    apply technical expertise and deliver impactful digital
+                    solutions.
                   </em>
                 </p>
                 <ul>
-                  <li>{basicInfo?.[0]?.location}</li>
-                  <li>{basicInfo?.[0]?.phone_no}</li>
-                  <li>{basicInfo?.[0]?.email}</li>
+                  <li>Kathmandu, Nepal</li>
+                  <li>9804444601</li>
+                  <li>dipgyawali2060@gmail.com</li>
                 </ul>
               </div>
               {/* Edn Resume Item */}
               <h3 className="resume-title">Education</h3>
               <div className="resume-item">
                 <p>
-                  <em>
-                    {basicInfo?.[0]?.education && parse(basicInfo[0].education)}
-                  </em>
+                  <em>{education && parse(education)}</em>
                 </p>
               </div>
               {/* Edn Resume Item */}
@@ -73,26 +96,23 @@ export default function Resume({ basicInfo }) {
               <h3 className="resume-title">Professional Experience</h3>
               <div className="resume-item">
                 <p>
-                  <em>
-                    {basicInfo?.[0]?.job_experience &&
-                      parse(basicInfo[0].job_experience)}
-                  </em>
+                  <em>{experience && parse(experience)}</em>
                 </p>
               </div>
             </div>
           </div>
         </div>
         <div className="container text-center mt-4">
-          <button 
-            className="btn btn-primary" 
+          <button
+            className="btn btn-primary"
             onClick={handleDownloadCV}
-            disabled={!basicInfo?.[0]?.cv}
+            disabled={!cv}
           >
-            {basicInfo?.[0]?.cv ? 'Download CV' : 'CV Not Available'}
+            {cv ? "Download CV" : "CV Not Available"}
           </button>
         </div>
       </section>
       {/* /Resume Section */}
     </div>
   );
-} 
+}

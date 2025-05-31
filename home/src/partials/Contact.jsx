@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect, useRef } from "react";
+import emailjs from '@emailjs/browser';
+import ReCAPTCHA from "react-google-recaptcha";
 
-export default function Contact({ basicInfo }) {
+export default function Contact() {
+  const form = useRef();
+  const recaptchaRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,6 +14,7 @@ export default function Contact({ basicInfo }) {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState({ type: "", message: "" });
   const [successBanner, setSuccessBanner] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
 
   // Effect to handle automatic hiding of success banner after 5 seconds
   useEffect(() => {
@@ -29,25 +33,54 @@ export default function Contact({ basicInfo }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleRecaptchaChange = (value) => {
+    setRecaptchaValue(value);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ type: "", message: "" });
 
+    if (!recaptchaValue) {
+      setStatus({
+        type: "error",
+        message: "Please complete the reCAPTCHA verification",
+      });
+      return;
+    }
+
     try {
       setLoading(true);
-      const response = await axios.post(`${import.meta.env.VITE_API}/front/home/send-message`, formData);
+      
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Dip Kumar Gyawali',
+        'g-recaptcha-response': recaptchaValue
+      };
+
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
+        templateParams,
+        import.meta.env.VITE_PUBLIC_KEY 
+      );
 
       setStatus({
         type: "success",
         message: "Message submitted successfully!",
       });
       
-      // Show the success banner
       setSuccessBanner(true);
-      
       setFormData({ name: "", email: "", subject: "", message: "" });
+      if (form.current) form.current.reset();
+      if (recaptchaRef.current) recaptchaRef.current.reset();
+      setRecaptchaValue(null);
+      
     } catch (err) {
-      console.error(err);
+      console.error('Error sending email:', err);
       setStatus({
         type: "error",
         message: "Something went wrong. Please try again.",
@@ -101,7 +134,7 @@ export default function Contact({ basicInfo }) {
                   <i className="bi bi-geo-alt flex-shrink-0" />
                   <div>
                     <h3>Address</h3>
-                    <p>{basicInfo?.[0]?.location}</p>
+                    <p>Naxal, Kathmandu</p>
                   </div>
                 </div>
                 {/* End Info Item */}
@@ -113,7 +146,7 @@ export default function Contact({ basicInfo }) {
                   <i className="bi bi-telephone flex-shrink-0" />
                   <div>
                     <h3>Call Me</h3>
-                    <p>{basicInfo?.[0]?.phone_no}</p>
+                    <p>9804444601</p>
                   </div>
                 </div>
                 {/* End Info Item */}
@@ -125,7 +158,7 @@ export default function Contact({ basicInfo }) {
                   <i className="bi bi-envelope flex-shrink-0" />
                   <div>
                     <h3>Email Me</h3>
-                    <p>{basicInfo?.[0]?.email}</p>
+                    <p>dipgyawali2060@gmail.com</p>
                   </div>
                 </div>
                 {/* End Info Item */}
@@ -141,7 +174,7 @@ export default function Contact({ basicInfo }) {
               </div>
             </div>
             <div className="col-lg-7">
-              <form className="php-email-form" onSubmit={handleSubmit}>
+              <form ref={form} className="php-email-form" onSubmit={handleSubmit}>
                 <div className="row gy-4">
                   <div className="col-md-6">
                     <label htmlFor="name-field" className="pb-2">
@@ -199,6 +232,15 @@ export default function Contact({ basicInfo }) {
                       onChange={handleChange}
                     />
                   </div>
+                  <div className="col-md-12">
+                    <div className="d-flex justify-content-center mb-3">
+                      <ReCAPTCHA
+                        ref={recaptchaRef}
+                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                        onChange={handleRecaptchaChange}
+                      />
+                    </div>
+                  </div>
 
                   <div className="col-md-12 text-center">
                     {loading && <div className="loading">Loading...</div>}
@@ -213,7 +255,7 @@ export default function Contact({ basicInfo }) {
                         {status.message}
                       </div>
                     )}
-                    <button type="submit" disabled={loading}>
+                    <button type="submit" disabled={loading || !recaptchaValue}>
                       Send Message
                     </button>
                   </div>

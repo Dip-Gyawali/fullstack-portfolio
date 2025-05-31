@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export default function About({ basicInfo, role }) {
+export default function About() {
+  const [role, setRole] = useState(null);
+
+  useEffect(() => {
+    setRole([
+      { name: "Full Stack Developer" },
+      { name: "Laravel Developer" },
+      { name: "React Developer" },
+      { name: "Mern Stack Developer" },
+    ]);
+  }, []);
+
   return (
     <div>
       {/* About Section */}
@@ -23,9 +34,7 @@ export default function About({ basicInfo, role }) {
           <div className="row gy-4 justify-content-center">
             <div className="col-lg-4 text-center">
               <img
-                src={`${import.meta.env.VITE_IMAGE_URL}/uploads/${
-                  basicInfo?.[0]?.image
-                }`}
+                src="/images/me.png"
                 className="img-fluid rounded-circle"
                 alt="Profile"
                 style={{ maxWidth: "200px", height: "auto" }}
@@ -48,17 +57,19 @@ export default function About({ basicInfo, role }) {
                   <ul>
                     <li>
                       <i className="bi bi-chevron-right" />{" "}
-                      <strong>Name:</strong> <span>{basicInfo?.[0]?.name}</span>
+                      <strong>Name:</strong> <span>Dip Kumar Gyawali</span>
                     </li>
                     <li>
                       <i className="bi bi-chevron-right" />{" "}
                       <strong>Phone:</strong>{" "}
-                      <span>{basicInfo?.[0]?.phone_no}</span>
+                      <a href="tel:+9779804444601">9804444601</a>
                     </li>
                     <li>
                       <i className="bi bi-chevron-right" />{" "}
                       <strong>Email:</strong>{" "}
-                      <span>{basicInfo?.[0]?.email}</span>
+                      <a href="mail:dipgyawali2060@gmail.com">
+                        dipgyawali2060@gmail.com
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -67,17 +78,17 @@ export default function About({ basicInfo, role }) {
                     <li>
                       <i className="bi bi-chevron-right" />{" "}
                       <strong>Experience:</strong>{" "}
-                      <span>{basicInfo?.[0]?.experience}</span>
+                      <span>1+ Years</span>
                     </li>
                     <li>
                       <i className="bi bi-chevron-right" />{" "}
                       <strong>Degree:</strong>{" "}
-                      <span>{basicInfo?.[0]?.degree}</span>
+                      <span>B.I.T</span>
                     </li>
                     <li>
                       <i className="bi bi-chevron-right" />{" "}
                       <strong>City:</strong>{" "}
-                      <span>{basicInfo?.[0]?.location}</span>
+                      <span>Kathmandu, Nepal</span>
                     </li>
                   </ul>
                 </div>

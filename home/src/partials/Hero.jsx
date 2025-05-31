@@ -1,14 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TypingEffect from '../components/TypingEffect'
 
-export default function Hero({basicInfo, role}) {
+export default function Hero() {
+
+  const [role, setRole] = useState(null);
+
+  useEffect(() => {
+    setRole([
+      {name: 'Full Stack Developer'},
+      {name: 'Laravel Developer'},
+      {name: 'React Developer'},
+      {name: 'Mern Stack Developer'},
+    ]);
+  },[]);
+
   return (
     <>
     {/* Hero Section */}
     <section id="hero" className="hero section dark-background">
     <img
-      src={`${import.meta.env.VITE_IMAGE_URL}/uploads/${basicInfo?.[0]?.cover_image}`}
-      alt={`${basicInfo?.[0]?.name}`}
+      src='/images/bg.jpg'
+      alt={`Dip Kumar Gyawali`}
       data-aos="fade-in"
       className="object-fit-cover"
       style={{
@@ -18,7 +30,7 @@ export default function Hero({basicInfo, role}) {
       }}
     />
     <div className="container" data-aos="fade-up" data-aos-delay={100}>
-      <h1>{basicInfo?.[0]?.name}</h1>
+      <h1>Dip Kumar Gyawali</h1>
       <p>
         I'm a <TypingEffect roles={role} />
       </p>

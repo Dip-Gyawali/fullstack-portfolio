@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export default function Skills({ skills }) {
+export default function Skills() {
+  const [skills, setSkills] = useState(null);
+
+  useEffect(() => {
+    setSkills([
+      {name: 'ReactJs/NextJs', rating: 90},
+      {name: 'Laravel', rating: 90},
+      {name: 'NodeJs/Express', rating: 85},
+      {name: 'MongoDB/MySQL', rating: 85},
+      {name: 'Css/Tailwind', rating: 90},
+      {name: 'Html', rating: 90},
+    ]);
+  },[]);
   return (
     <div>
       {/* Skills Section */}
