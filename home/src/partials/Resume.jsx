@@ -5,7 +5,7 @@ export default function Resume() {
   let education =
     '<h4>Bachelor in Information Technology</h4> <h5>2021 - present (Expected 2025)</h5> <p><em>KIST College &amp; SS , Kathmandu , Nepal</em></p> <p><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">-Relevant Courses</span><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">: Data Structures, AI, Applied Statistics, Advanced Web Development</span></p>';
   let experience = `
-  <p><strong><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">FullStack Developer</span></strong></p>
+  <p><strong><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">FullStack Developer - <a href="https://goinfosys.com.np/" target="_blank" rel="noopener noreferrer">Go Infosys</a></span></strong></p>
   <p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Dec 2024 - Present</span></p>
   <ul>
     <li><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Developed and deployed 7+ full-stack applications for clients, reducing page load time by 40% via backend optimization and caching.</span></li>
@@ -14,7 +14,7 @@ export default function Resume() {
     <li><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Enhanced camera test features, increasing UI interaction time by 25%.</span></li>
     <li><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Actively contributed to troubleshooting, performance optimization, and ensuring smooth functionality for end-users.</span></li>
   </ul>
-  <p><strong><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">FrontEnd Intern</span></strong></p>
+  <p><strong><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">FrontEnd Intern - <a href="https://quarkinfotech.com/" target="_blank" rel="noopener noreferrer">Quark Infotech</a></span></strong></p>
   <p class="cvGsUA direction-ltr align-start para-style-body"><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Sep 2024 - Dec 2024</span></p>
   <ul>
     <li><span class="OYPEnA font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Enhanced the frontend of tech news site, focusing on blind camera test features, polls functionality, News Section, Price List and many more.</span></li>

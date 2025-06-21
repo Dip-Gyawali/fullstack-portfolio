@@ -161,6 +161,79 @@ export default function Portfolio() {
       },
       {
         _id: "4",
+        title: "Taleju Adventure",
+        slug: "taleju-adventure",
+        category: "Web Developemnt",
+        client_name: "Taleju Adventure",
+        link: "https://talejuadventure.com/",
+        desc: `<h3 class="text-xl font-semibold mb-2">Project Overview</h3>
+        <p class="mb-4">Taleju Adventure is a comprehensive tours and travel platform offering curated travel experiences across Nepal. The platform enables users to explore, book, and customize a wide range of adventure tours, cultural trips, trekking packages, and sightseeing journeys tailored to different interests and budgets.</p>
+        <h3 class="text-xl font-semibold mb-2">Key Features</h3>
+        <ul class="list-disc pl-5 mb-4 space-y-2">
+          <li>Dynamic tour listings with detailed itineraries, images, and pricing.</li>
+          <li>Online booking system allowing users to reserve and pay for packages securely.</li>
+          <li>Customizable travel options including group size, duration, and add-on activities.</li>
+          <li>Integrated inquiry and support system for personalized travel planning.</li>
+          <li>Mobile-friendly, responsive design for seamless browsing on any device.</li>
+          <li>SEO-optimized content and blog module to attract and inform travelers.</li>
+        </ul>
+        <h3 class="text-xl font-semibold mb-2">Technical Implementation</h3>
+        <ul class="list-disc pl-5 mb-4 space-y-2">
+          <li>Developed with Laravel (backend) and Blade templating for robust server-side rendering.</li>
+          <li>Admin panel for managing tours, bookings, customer inquiries, and content updates.</li>
+          <li>Role-based access control for admins, operators, and content editors.</li>
+          <li>Integrated payment gateway for secure online transactions.</li>
+          <li>Optimized for fast load times and high performance, even with rich media content.</li>
+        </ul>
+        <h3 class="text-xl font-semibold mb-2">Challenges &amp; Solutions</h3>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><strong>Managing diverse tour options:</strong> Built flexible data models to accommodate various package types, durations, and customizations.</li>
+          <li><strong>Ensuring booking reliability:</strong> Implemented real-time availability checks and automated confirmation workflows.</li>
+          <li><strong>Delivering a user-friendly experience:</strong> Focused on intuitive navigation, clear calls-to-action, and responsive layouts for all devices.</li>
+          <li><strong>Maintaining SEO and discoverability:</strong> Structured content and metadata for optimal search engine ranking and visibility.</li>
+        </ul>`,
+        cover_img: "/images/taleju-adv.png",
+      },
+      {
+        _id: "5",
+        title: "Kailash Trek",
+        slug: "kailash-trek",
+        category: "Web Developemnt",
+        client_name: "Kailash Trek",
+        link: "https://kailashtreks.com/",
+        desc: `<h3 class="text-xl font-semibold mb-2">Project Overview</h3>
+        <p class="mb-4">Kailash Treks is a specialized tours and travel platform focused on providing spiritual and adventure journeys to Mount Kailash and other sacred destinations. The platform serves pilgrims, trekkers, and explorers by offering curated itineraries, cross-border travel arrangements, and seamless booking experiences.</p>
+        
+        <h3 class="text-xl font-semibold mb-2">Key Features</h3>
+        <ul class="list-disc pl-5 mb-4 space-y-2">
+          <li>Exclusive Kailash Mansarovar Yatra packages with visa, permit, and full logistical support.</li>
+          <li>Multi-country itineraries covering Nepal, Tibet, and significant pilgrimage sites.</li>
+          <li>Online booking system with options for individual or group travel customization.</li>
+          <li>Detailed package descriptions including itineraries, maps, gallery, and FAQs.</li>
+          <li>Responsive and mobile-friendly design for smooth access across all devices.</li>
+          <li>Inquiry and contact system to assist users with personalized planning support.</li>
+        </ul>
+        
+        <h3 class="text-xl font-semibold mb-2">Technical Implementation</h3>
+        <ul class="list-disc pl-5 mb-4 space-y-2">
+          <li>Built using Laravel (backend) and Blade (frontend) with server-side rendering.</li>
+          <li>Feature-rich admin panel for managing tour packages, bookings, inquiries, and SEO content.</li>
+          <li>Role-based access system for admin, travel consultants, and content editors.</li>
+          <li>Integrated payment system for secure tour deposits and full bookings.</li>
+          <li>Performance-optimized with image lazy loading and SEO-structured metadata.</li>
+        </ul>
+        
+        <h3 class="text-xl font-semibold mb-2">Challenges &amp; Solutions</h3>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><strong>Managing cross-border tour logistics:</strong> Developed flexible models to handle permits, country-wise itinerary variations, and travel documents.</li>
+          <li><strong>Ensuring booking reliability:</strong> Implemented availability checks, booking validation, and auto-confirmation workflows.</li>
+          <li><strong>Serving diverse user needs:</strong> Focused on multi-language readiness, cultural clarity, and scalable package structures.</li>
+          <li><strong>Maintaining SEO & discoverability:</strong> Integrated blog module and schema markup for better ranking on search engines.</li>
+        </ul>`,
+        cover_img: "/images/kailash.png",
+      },
+      {
+        _id: "6",
         title: "Max Logistics",
         slug: "max-logistic",
         category: "Web Developemnt",
@@ -218,7 +291,7 @@ export default function Portfolio() {
         cover_img: "/images/max.png",
       },
       {
-        _id: "5",
+        _id: "7",
         title: "Bagmati Car Center",
         slug: "bagmati-car-center",
         category: "Web Developemnt",
@@ -249,7 +322,7 @@ export default function Portfolio() {
         cover_img: "/images/bagmati.png",
       },
       {
-        _id: "6",
+        _id: "8",
         title: "Racing Automobiles",
         slug: "racing-automobiles",
         category: "Web Developemnt",
@@ -307,7 +380,7 @@ export default function Portfolio() {
         cover_img: "/images/racing.png",
       },
       {
-        _id: "7",
+        _id: "9",
         title: "Western Motors",
         slug: "western-motors",
         category: "Web Developemnt",
@@ -366,7 +439,7 @@ export default function Portfolio() {
         cover_img: "/images/western.png",
       },
       {
-        _id: "8",
+        _id: "10",
         title: "NABA",
         slug: "naba",
         category: "Web Developemnt",
@@ -416,7 +489,7 @@ export default function Portfolio() {
         cover_img: "/images/naba.png",
       },
       {
-        _id: "10",
+        _id: "11",
         title: "Bishwa Guru",
         slug: "bishwa-guru",
         category: "Web Developemnt",

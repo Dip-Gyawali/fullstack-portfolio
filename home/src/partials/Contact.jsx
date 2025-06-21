@@ -232,7 +232,17 @@ export default function Contact() {
                       onChange={handleChange}
                     />
                   </div>
-                
+                  
+                  <div className="col-md-12">
+                    <div className="d-flex justify-content-center mb-3">
+                      <ReCAPTCHA
+                        ref={recaptchaRef}
+                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                        onChange={handleRecaptchaChange}
+                      />
+                    </div>
+                  </div>
+
                   <div className="col-md-12 text-center">
                     {loading && <div className="loading">Loading...</div>}
                     {status.message && (
