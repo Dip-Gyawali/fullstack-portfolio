@@ -93,11 +93,6 @@ export default function Sidebar() {
               </a>
             </li>
             <li>
-              <a href="/#resume" onClick={handleNavClick}>
-                <i className="bi bi-file-earmark-text navicon" /> Resume
-              </a>
-            </li>
-            <li>
               <a href="/#portfolio" onClick={handleNavClick}>
                 <i className="bi bi-images navicon" /> Portfolio
               </a>

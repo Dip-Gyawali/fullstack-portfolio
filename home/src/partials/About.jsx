@@ -12,6 +12,29 @@ export default function About() {
     ]);
   }, []);
 
+   let cv = "/cv/Dip Kumar Gyawali CV.pdf";
+
+  const handleDownloadCV = async () => {
+    if (!cv) return;
+
+    try {
+      const response = await fetch(cv);
+      if (!response.ok) throw new Error("File not found");
+
+      const blob = await response.blob();
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.setAttribute("download", "Dip_Kumar_Gyawali_CV.pdf");
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(downloadUrl);
+    } catch (error) {
+      console.error("Error downloading file:", error);
+    }
+  };
+
   return (
     <div>
       {/* About Section */}
@@ -77,21 +100,27 @@ export default function About() {
                   <ul>
                     <li>
                       <i className="bi bi-chevron-right" />{" "}
-                      <strong>Experience:</strong>{" "}
-                      <span>1+ Years</span>
+                      <strong>Experience:</strong> <span>1+ Years</span>
                     </li>
                     <li>
                       <i className="bi bi-chevron-right" />{" "}
-                      <strong>Degree:</strong>{" "}
-                      <span>B.I.T</span>
+                      <strong>Degree:</strong> <span>B.I.T</span>
                     </li>
                     <li>
                       <i className="bi bi-chevron-right" />{" "}
-                      <strong>City:</strong>{" "}
-                      <span>Kathmandu, Nepal</span>
+                      <strong>City:</strong> <span>Kathmandu, Nepal</span>
                     </li>
                   </ul>
                 </div>
+              </div>
+              <div className="container mt-4">
+                <button
+                  className="btn btn-primary"
+                  onClick={handleDownloadCV}
+                  disabled={!cv}
+                >
+                  {cv ? "Download CV" : "CV Not Available"}
+                </button>
               </div>
             </div>
           </div>
