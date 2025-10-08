@@ -26,11 +26,10 @@ export default function Home() {
       <main className="main">
         <Hero />
         <About />
-        <Skills  />
         <Portfolio />
         <Service />
         <Testimonial />
-        <Contact />
+        
       </main>
     </>
   );

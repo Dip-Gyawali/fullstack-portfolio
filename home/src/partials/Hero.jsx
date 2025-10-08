@@ -8,8 +8,7 @@ export default function Hero() {
   useEffect(() => {
     setRole([
       {name: 'Full Stack Developer'},
-      {name: 'Laravel Developer'},
-      {name: 'React Developer'},
+      {name: 'Backend Focused'},
       {name: 'Mern Stack Developer'},
     ]);
   },[]);

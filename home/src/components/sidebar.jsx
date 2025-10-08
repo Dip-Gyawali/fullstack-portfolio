@@ -107,11 +107,7 @@ export default function Sidebar() {
                 <i className="bi bi-chat-quote navicon" /> Testimonials
               </a>
             </li>
-            <li>
-              <a href="/#contact" onClick={handleNavClick}>
-                <i className="bi bi-envelope navicon" /> Contact
-              </a>
-            </li>
+            
           </ul>
         </nav>
       </header>
