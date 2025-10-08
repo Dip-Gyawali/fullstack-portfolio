@@ -47,7 +47,7 @@ export default function Sidebar() {
             <i className="bi bi-facebook" />
           </a>
           <a
-            href="https://www.linkedin.com/in/dip-gyawali-537029312/"
+            href="https://www.linkedin.com/in/dip-kumar-gyawali/"
             className="linkedin"
             target="_blank"
             rel="noopener noreferrer"
