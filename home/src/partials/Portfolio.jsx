@@ -196,6 +196,16 @@ export default function Portfolio() {
       },
       {
         _id: "5",
+        title: "Variant Consulting Group",
+        slug: "variant-consulting-group",
+        category: "Web Developemnt",
+        client_name: "Variant Consulting Group Pvt. Ltd",
+        link: "https://variantconsult.com.np/",
+        desc: `<h3><strong>Project Overview</strong></h3> <p><strong>Variant Consulting Group</strong> is a professional consulting platform based in Nepal, specializing in taxation, accounting, and business advisory services. The platform allows users to book consultations, explore tax-related blogs, view offered services, and access the portfolio of the consulting group. It is designed to cater to both clients and admin staff with a clean interface and efficient management features.</p> <p>As the <strong>full-stack developer</strong>, I was responsible for building the complete platform. Key highlights include a <strong>consultation booking system</strong> that allows clients to select service type, preferred time slots, and consultant, as well as a <strong>service and portfolio management system</strong> for admins to efficiently manage offerings and showcase client success stories.</p> <h3><strong>Technical Implementation</strong></h3> <ul> <li>Developed the platform using <strong>Laravel Blade</strong> for server-side rendering and maintainable backend logic.</li> <li>Implemented a responsive and user-friendly UI using <strong>Bootstrap</strong> and <strong>vanilla CSS</strong>.</li> <li>Built a <strong>consultation booking system</strong> with multiple options, allowing users to select service, date, and consultant availability.</li> <li>Created a dynamic <strong>portfolio and services module</strong> to display projects, client feedback, and offered services efficiently.</li> <li>Integrated a <strong>blog module</strong> for publishing tax-related content, improving SEO visibility and client engagement.</li> <li>Developed a <strong>role-based permission system</strong> for admins, accountants, and content managers using Laravel authorization features.</li> <li>Applied <strong>SEO best practices</strong> with structured data, meta tags, and clean URLs to improve search engine ranking.</li> <li>Optimized <strong>images and assets</strong> with lazy loading to enhance performance and reduce bandwidth usage.</li> <li>Designed a <strong>mobile-first responsive frontend</strong> using Bootstrap, ensuring smooth access across devices.</li> </ul> <h3><strong>Challenges &amp; Solutions</strong></h3> <ul> <li><strong>Flexible consultation booking logic</strong>: Developed scalable models and controllers to handle multiple booking options, time slots, and consultant availability efficiently.</li> <li><strong>Maintaining performance with Blade and Bootstrap</strong>: Used caching, asset minimization, and image optimization to ensure fast load times.</li> <li><strong>Managing roles securely</strong>: Applied Laravel policies and middleware to enforce fine-grained access control for admins, accountants, and content managers.</li> <li><strong>Balancing SEO and server-side rendering</strong>: Structured content, routes, and metadata to maximize search engine visibility.</li> <li><strong>Combining design with functionality</strong>: Delivered a professional and easy-to-use interface that handles complex booking and content management seamlessly.</li> </ul>`,
+        cover_img: "/images/variant.png",
+      },
+      {
+        _id: "6",
         title: "Kailash Trek",
         slug: "kailash-trek",
         category: "Web Developemnt",
@@ -233,7 +243,7 @@ export default function Portfolio() {
         cover_img: "/images/kailash.png",
       },
       {
-        _id: "6",
+        _id: "7",
         title: "Max Logistics",
         slug: "max-logistic",
         category: "Web Developemnt",
@@ -291,7 +301,7 @@ export default function Portfolio() {
         cover_img: "/images/max.png",
       },
       {
-        _id: "7",
+        _id: "8",
         title: "Bagmati Car Center",
         slug: "bagmati-car-center",
         category: "Web Developemnt",
@@ -322,7 +332,7 @@ export default function Portfolio() {
         cover_img: "/images/bagmati.png",
       },
       {
-        _id: "8",
+        _id: "9",
         title: "Racing Automobiles",
         slug: "racing-automobiles",
         category: "Web Developemnt",
@@ -380,7 +390,7 @@ export default function Portfolio() {
         cover_img: "/images/racing.png",
       },
       {
-        _id: "9",
+        _id: "10",
         title: "Western Motors",
         slug: "western-motors",
         category: "Web Developemnt",
@@ -439,7 +449,7 @@ export default function Portfolio() {
         cover_img: "/images/western.png",
       },
       {
-        _id: "10",
+        _id: "11",
         title: "NABA",
         slug: "naba",
         category: "Web Developemnt",
@@ -489,7 +499,7 @@ export default function Portfolio() {
         cover_img: "/images/naba.png",
       },
       {
-        _id: "11",
+        _id: "12",
         title: "Bishwa Guru",
         slug: "bishwa-guru",
         category: "Web Developemnt",
@@ -549,7 +559,6 @@ export default function Portfolio() {
               </ul>`,
         cover_img: "/images/bishwa.png",
       },
-     
     ]);
   }, []);
 
