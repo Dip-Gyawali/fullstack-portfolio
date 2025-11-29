@@ -5,37 +5,37 @@ export default function Portfolio() {
 
   useEffect(() => {
     setPortfolio([
-      // {
-      //   _id: "1",
-      //   title: "Gadgetbyte Nepal",
-      //   slug: "gadgetbyte-nepal",
-      //   category: "Web Developemnt",
-      //   client_name: "Gadgetbyte",
-      //   link: "https://uat.gadgetbyte.com.np/",
-      //   desc: `<h2 class="text-2xl font-semibold mb-4">Project Overview</h2>
-      //     <p class="text-gray-700 leading-relaxed mb-4">A comprehensive tech news and gadget review platform in Nepal, migrated from WordPress to a modern stack for enhanced performance and scalability.</p>
-      //     <p class="text-gray-700 leading-relaxed">Led the migration of the entire application from WordPress to Next.js, significantly improving performance, scalability, and developer experience. Built a custom admin panel using Laravel to streamline content management and reduce data redundancy, enabling better control over the platform. Implemented frontend caching with Next.js, resulting in a 40% faster page load and reduced server load. Contributed to the UI/UX overhaul, delivering a more modern, intuitive, and responsive interface for users across devices.<br><br></p>
-      //     <h2 class="text-2xl font-semibold mb-4">Technical Implementation</h2>
-      //     <ul class="list-disc pl-5 space-y-2">
-      //     <li class="text-gray-700">Migrated the platform from WordPress to Next.js, enhancing performance and scalability.</li>
-      //     <li class="text-gray-700">Developed a custom admin panel using Laravel for efficient content management.</li>
-      //     <li class="text-gray-700">Implemented frontend caching strategies with Next.js to improve load times.</li>
-      //     <li class="text-gray-700">Utilized Tailwind CSS and ShadCN UI for a modern and responsive design.</li>
-      //     <li class="text-gray-700">Integrated Framer Motion for smooth animations and transitions.</li>
-      //     <li class="text-gray-700">Deployed the application on Alibaba Cloud for reliable hosting and scalability.</li>
-      //     <li class="text-gray-700">Employed PostgreSQL for robust and efficient data management.<br>&nbsp;</li>
-      //     </ul>
-      //     <h2 class="text-2xl font-semibold mb-4">Challenges &amp; Solutions</h2>
-      //     <ul class="list-disc pl-5 space-y-2">
-      //     <li class="text-gray-700">Ensuring a seamless migration from WordPress to a modern tech stack without data loss.</li>
-      //     <li class="text-gray-700">Developing a custom admin panel that meets the specific needs of content creators.</li>
-      //     <li class="text-gray-700">Optimizing frontend performance to handle high traffic volumes.</li>
-      //     <li class="text-gray-700">Maintaining consistency and coherence across various sections of the platform.</li>
-      //     <li class="text-gray-700">Implementing responsive design principles to cater to a diverse user base.</li>
-      //     <li class="text-gray-700">Coordinating between frontend and backend teams to ensure smooth integration.</li>
-      //     </ul>`,
-      //   cover_img: "/images/gbn.png",
-      // },
+      {
+        _id: "1",
+        title: "Gadgetbyte Nepal",
+        slug: "gadgetbyte-nepal",
+        category: "Web Developemnt",
+        client_name: "Gadgetbyte",
+        link: "https://www.gadgetbytenepal.com/",
+        desc: `<h2 class="text-2xl font-semibold mb-4">Project Overview</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">A comprehensive tech news and gadget review platform in Nepal, migrated from WordPress to a modern stack for enhanced performance and scalability.</p>
+          <p class="text-gray-700 leading-relaxed">Led the migration of the entire application from WordPress to Next.js, significantly improving performance, scalability, and developer experience. Built a custom admin panel using Laravel to streamline content management and reduce data redundancy, enabling better control over the platform. Implemented frontend caching with Next.js, resulting in a 40% faster page load and reduced server load. Contributed to the UI/UX overhaul, delivering a more modern, intuitive, and responsive interface for users across devices.<br><br></p>
+          <h2 class="text-2xl font-semibold mb-4">Technical Implementation</h2>
+          <ul class="list-disc pl-5 space-y-2">
+          <li class="text-gray-700">Migrated the platform from WordPress to Next.js, enhancing performance and scalability.</li>
+          <li class="text-gray-700">Developed a custom admin panel using Laravel for efficient content management.</li>
+          <li class="text-gray-700">Implemented frontend caching strategies with Next.js to improve load times.</li>
+          <li class="text-gray-700">Utilized Tailwind CSS and ShadCN UI for a modern and responsive design.</li>
+          <li class="text-gray-700">Integrated Framer Motion for smooth animations and transitions.</li>
+          <li class="text-gray-700">Deployed the application on Alibaba Cloud for reliable hosting and scalability.</li>
+          <li class="text-gray-700">Employed PostgreSQL for robust and efficient data management.<br>&nbsp;</li>
+          </ul>
+          <h2 class="text-2xl font-semibold mb-4">Challenges &amp; Solutions</h2>
+          <ul class="list-disc pl-5 space-y-2">
+          <li class="text-gray-700">Ensuring a seamless migration from WordPress to a modern tech stack without data loss.</li>
+          <li class="text-gray-700">Developing a custom admin panel that meets the specific needs of content creators.</li>
+          <li class="text-gray-700">Optimizing frontend performance to handle high traffic volumes.</li>
+          <li class="text-gray-700">Maintaining consistency and coherence across various sections of the platform.</li>
+          <li class="text-gray-700">Implementing responsive design principles to cater to a diverse user base.</li>
+          <li class="text-gray-700">Coordinating between frontend and backend teams to ensure smooth integration.</li>
+          </ul>`,
+        cover_img: "/images/gbn.png",
+      },
       {
         _id: "2",
         title: "Atal Auto",
